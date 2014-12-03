@@ -38,12 +38,16 @@ sections
     min-height: 100%;
     flex-flow: column nowrap;
 }
-%index-section_base{
-    height: 300px; // TODO
+.index-section_base{
+    margin-bottom: 20px;
+}
+.index-section_base_title{
+    @include fontSize(18);
+    margin-bottom: 10px;
 }
 @each $cls in basic-info, summary, career-history, skill, edu{
     .index-section_#{$cls}{
-        @extend %index-section_base;
+        @extend .index-section_base;
     }
 }
 
@@ -88,6 +92,14 @@ sections basic-info
     display: none;
 }
 
+/* ---------------------------
+sections summary
+----------------------------*/
+.index-section_summary{}
+.index-section_summary_title{
+    @extend .index-section_base_title;
+}
+
 /* --------------------------------------------------------
 desktop
 ---------------------------------------------------------*/
@@ -116,7 +128,7 @@ desktop
     nav
     ----------------------------*/
     .index-nav{
-        position: static;
+        display: none;
     }
     /* ---------------------------
     sections
@@ -124,6 +136,15 @@ desktop
     .index-section{
         width: auto;
         flex: 1;
+        box-sizing: border-box;
+        padding-left: 50px;
+    }
+    .index-section_base{
+        margin-bottom: 30px;
+    }
+    .index-section_base_title{
+        @include fontSize(27);
+        margin-bottom: 15px;
     }
     /* ---------------------------
     sections basic-info
