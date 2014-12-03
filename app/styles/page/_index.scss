@@ -1,0 +1,163 @@
+/* ---------------------------
+base
+----------------------------*/
+.content{
+    width: 100%;
+    height: 100%;
+    padding: 50px 20px 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    position: relative;
+    overflow-x: hidden;
+}
+/* ---------------------------
+header
+----------------------------*/
+.index-header{
+    @include fontSize(13);
+    position: absolute;
+    top: 18px;
+    left: 10px;
+}
+
+/* ---------------------------
+nav
+----------------------------*/
+.index-nav{
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    transform: translate(0, 0);
+}
+/* ---------------------------
+sections
+----------------------------*/
+.index-section{
+    width: 100%;
+    min-height: 100%;
+    flex-flow: column nowrap;
+}
+%index-section_base{
+    height: 300px; // TODO
+}
+@each $cls in basic-info, summary, career-history, skill, edu{
+    .index-section_#{$cls}{
+        @extend %index-section_base;
+    }
+}
+
+/* ---------------------------
+sections basic-info
+----------------------------*/
+.index-section_basic-info{}
+.index-section_basic-info_text{
+    width: 100%;
+    height: 100%;
+}
+.index-section_basic-info_text_name{
+    @include fontSize(30);
+}
+.index-section_basic-info_text_position{
+    @include fontSize(14);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.index-section_basic-info_text_more{
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 2.2rem;
+    @include fontSize(13);
+}
+.index-section_basic-info_text_more_name{
+    box-sizing: border-box;
+    width: 20%;
+}
+.index-section_basic-info_text_more_value{
+    width: 80%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    padding-left: 15px;
+    a{
+        display: inline-block;
+    }
+}
+
+.index-section_basic-info_img{
+    display: none;
+}
+
+/* --------------------------------------------------------
+desktop
+---------------------------------------------------------*/
+@media (min-width: 980px){
+
+    /* ---------------------------
+    base
+    ----------------------------*/
+    .content{
+        width: 980px;
+        margin: 0 auto;
+        padding: 50px 0 0 0;
+        display: flex;
+        flex-flow: row nowrap;
+        overflow: auto;
+    }
+
+    /* ---------------------------
+    header
+    ----------------------------*/
+    .index-header{
+        @include fontSize(18);
+        top: 18px;
+    }
+    /* ---------------------------
+    nav
+    ----------------------------*/
+    .index-nav{
+        position: static;
+    }
+    /* ---------------------------
+    sections
+    ----------------------------*/
+    .index-section{
+        width: auto;
+        flex: 1;
+    }
+    /* ---------------------------
+    sections basic-info
+    ----------------------------*/
+    .index-section_basic-info{
+        display: flex;
+    }
+    .index-section_basic-info_text{
+        width: 70%;
+    }
+    .index-section_basic-info_text_name{
+        @include fontSize(41);
+    }
+    .index-section_basic-info_text_position{
+        @include fontSize(14);
+        margin-bottom: 30px;
+    }
+
+    .index-section_basic-info_text_more{
+        @include fontSize(16);
+    }
+    .index-section_basic-info_text_more_name{
+        padding-left: 20px;
+    }
+    .index-section_basic-info_text_more_value{
+        margin-bottom: 15px;
+    }
+
+    .index-section_basic-info_img{
+        display: block;
+        width: 30%;
+        height: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 25px;
+    }
+}

@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    base
+\*------------------------------------*/
+html,body{
+    width: 100%;
+    color: #848484;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+a{
+    @extend %clearLinkLine;
+    @include linkColor(#848484);
+    &:link{
+        text-decoration: underline;
+    }
+}
