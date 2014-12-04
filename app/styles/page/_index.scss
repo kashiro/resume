@@ -100,6 +100,41 @@ sections summary
     @extend .index-section_base_title;
 }
 
+/* ---------------------------
+sections career-history
+----------------------------*/
+.index-section_career-history{}
+.index-section_career-history_title{
+    @extend .index-section_base_title;
+}
+.index-section_history_year{
+    display: flex;
+    margin-bottom: 20px;
+}
+.index-section_history_year_num-line{
+    display: none;
+}
+.index-section_history_position-outer{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.index-section_history_position{
+    margin-bottom: 30px;
+}
+.index-section_history_date{
+    @include fontSize(13);
+    text-align: right;
+}
+.index-section_history_position-name{
+    @include fontSize(15);
+    font-style: italic;
+}
+.index-section_history_campany{
+    @include fontSize(13);
+    margin-bottom: 15px;
+}
+.index-section_history_desc{}
+
 /* --------------------------------------------------------
 desktop
 ---------------------------------------------------------*/
@@ -111,7 +146,7 @@ desktop
     .content{
         width: 980px;
         margin: 0 auto;
-        padding: 50px 0 0 0;
+        padding: 50px 30px 30px 30px;
         display: flex;
         flex-flow: row nowrap;
         overflow: auto;
@@ -137,7 +172,7 @@ desktop
         width: auto;
         flex: 1;
         box-sizing: border-box;
-        padding-left: 50px;
+        padding-left: 20px;
     }
     .index-section_base{
         margin-bottom: 30px;
@@ -181,4 +216,49 @@ desktop
         box-sizing: border-box;
         padding-top: 25px;
     }
+    /* ---------------------------
+    sections career-history
+    ----------------------------*/
+    .index-section_career-history{}
+    .index-section_history_year{
+        margin-bottom: 20px;
+    }
+    .index-section_history_year_num-line{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 200px;
+    }
+    .index-section_history_year_num{
+        @include fontSize(14);
+        font-weight: normal;
+        text-align: center;
+    }
+    .index-section_history_year_line{
+        width: 1px;
+        height: 100%;
+        display: inline-block;
+        background-color: #ccc;
+        flex: 1;
+    }
+    .index-section_history_position-outer{
+        box-sizing: border-box;
+        padding-top: 20px;
+    }
+    .index-section_history_position{
+        margin-bottom: 40px;
+    }
+    .index-section_history_date{
+        @include fontSize(13);
+        text-align: right;
+    }
+    .index-section_history_position-name{
+        @include fontSize(15);
+        font-style: italic;
+    }
+    .index-section_history_campany{
+        @include fontSize(13);
+        margin-bottom: 15px;
+    }
+    .index-section_history_desc{}
 }
