@@ -112,13 +112,13 @@ sections summary
 /* ---------------------------
 sections career-history
 ----------------------------*/
-.index-section_career-history{}
+.index-section_career-history{
+}
 .index-section_career-history_title{
     @extend .index-section_base_title;
 }
 .index-section_history_year{
     display: flex;
-    margin-bottom: 20px;
 }
 .index-section_history_year_num-line{
     display: none;
@@ -126,9 +126,9 @@ sections career-history
 .index-section_history_position-outer{
     display: flex;
     flex-flow: column nowrap;
+    flex: 1;
 }
 .index-section_history_position{
-    margin-bottom: 30px;
     padding-left: $content-padding-left;
 }
 .index-section_history_date{
@@ -144,6 +144,10 @@ sections career-history
     margin-bottom: 15px;
 }
 .index-section_history_desc{}
+.index-section_history_desc_item{
+    list-style: disc;
+    margin: 0 0 15px 20px;
+}
 
 /* ---------------------------
 sections edu-history
@@ -155,7 +159,8 @@ sections edu-history
 /* ---------------------------
 sections skill
 ----------------------------*/
-.index-section_skill{}
+.index-section_skill{
+}
 .index-section_skill_title{
     @extend .index-section_base_title;
 }
@@ -177,16 +182,21 @@ sections skill
     flex-flow: row wrap;
 }
 .index-section_skill_list-item{
-    width: 30%;
+    width: 50%;
     box-sizing: border-box;
     padding-left: 20px;
     font-style: italic;
 }
 .index-section_skill_list-star{
-    width: 70%;
+    width: 50%;
     box-sizing: border-box;
     padding-left: 20px;
     margin-bottom: 8px;
+}
+.index-section_skill_list-star--large{
+    @extend .index-section_skill_list-star;
+    line-height: 2rem;
+    margin-bottom: 15px;
 }
 /* --------------------------------------------------------
 tablet
@@ -288,7 +298,7 @@ $tablet-size: 759px;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        width: 200px;
+        width: 100px;
     }
     .index-section_history_year_num{
         @include fontSize(14);
@@ -307,8 +317,8 @@ $tablet-size: 759px;
         padding-top: 20px;
     }
     .index-section_history_position{
-        margin-bottom: 40px;
         padding-left: 0;
+        margin-bottom: 0;
     }
     .index-section_history_date{
         @include fontSize(13);
@@ -332,19 +342,20 @@ $tablet-size: 759px;
     }
     .index-section_skill_inner{
         flex: 1;
-        margin-bottom:  15px;
+        margin: 0 0 15px 20px;
+        &:nth-child(1){
+            margin: 0 0 15px 0;
+        }
+    }
+    .index-section_skill_inner--large{
+        flex: 1.5;
+        margin: 0 0 15px 20px;
     }
     .index-section_skill_subtitle{
         @include fontSize(18);
     }
     .index-section_skill_list{
         @include fontSize(15);
-    }
-    .index-section_skill_list-item{
-        width: 30%;
-    }
-    .index-section_skill_list-star{
-        width: 70%;
     }
 }
 /* --------------------------------------------------------

@@ -1,0 +1,20 @@
+html,
+body,
+.content,
+.index-section{
+    float: none;
+}
+.content{
+    position: static;
+}
+.index-section{
+    position: relative;
+}
+.index-section_career-history{
+    page-break-before: always;
+    page-break-inside: avoid;
+}
+.index-section_skill{
+    page-break-before: always;
+    page-break-inside: avoid;
+}
