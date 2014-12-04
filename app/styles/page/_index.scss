@@ -11,6 +11,7 @@ base
     position: relative;
     overflow-x: hidden;
 }
+$content-padding-left: 10px;
 /* ---------------------------
 header
 ----------------------------*/
@@ -69,17 +70,22 @@ sections basic-info
 }
 
 .index-section_basic-info_text_more{
+    @include fontSize(13);
+    padding-left: $content-padding-left;
+}
+.index-section_basic-info_text_info,
+.index-section_basic-info_text_link{
     display: flex;
     flex-flow: row wrap;
     line-height: 2.2rem;
-    @include fontSize(13);
 }
+
 .index-section_basic-info_text_more_name{
     box-sizing: border-box;
-    width: 20%;
+    width: 30%;
 }
 .index-section_basic-info_text_more_value{
-    width: 80%;
+    width: 70%;
     margin-bottom: 0;
     box-sizing: border-box;
     padding-left: 15px;
@@ -98,6 +104,9 @@ sections summary
 .index-section_summary{}
 .index-section_summary_title{
     @extend .index-section_base_title;
+}
+.index-section_summary_desc{
+    padding-left: $content-padding-left;
 }
 
 /* ---------------------------
@@ -120,6 +129,7 @@ sections career-history
 }
 .index-section_history_position{
     margin-bottom: 30px;
+    padding-left: $content-padding-left;
 }
 .index-section_history_date{
     @include fontSize(13);
@@ -152,6 +162,7 @@ sections skill
 .index-section_skill_outer{
     display: flex;
     flex-flow: column nowrap;
+    padding-left: $content-padding-left;
 }
 .index-section_skill_inner{
     margin-bottom:  10px;
@@ -178,16 +189,18 @@ sections skill
     margin-bottom: 8px;
 }
 /* --------------------------------------------------------
-desktop
+tablet
 ---------------------------------------------------------*/
-@media (min-width: 980px){
+$tablet-size: 759px;
+@media (min-width: $tablet-size){
+    $content-padding-left: 20px;
 
     /* ---------------------------
     base
     ----------------------------*/
     .content{
-        width: 980px;
-        margin: 0 auto;
+        width: 100%;
+        //margin: 0 auto;
         padding: 50px 30px 30px 30px;
         display: flex;
         flex-flow: row nowrap;
@@ -222,6 +235,12 @@ desktop
     .index-section_base_title{
         @include fontSize(27);
         margin-bottom: 15px;
+    }
+    /* ---------------------------
+    sections summary
+    ----------------------------*/
+    .index-section_summary_desc{
+        padding-left: $content-padding-left;
     }
     /* ---------------------------
     sections basic-info
@@ -289,6 +308,7 @@ desktop
     }
     .index-section_history_position{
         margin-bottom: 40px;
+        padding-left: 0;
     }
     .index-section_history_date{
         @include fontSize(13);
@@ -308,6 +328,7 @@ desktop
     ----------------------------*/
     .index-section_skill_outer{
         flex-flow: row wrap;
+        padding-left: $content-padding-left;
     }
     .index-section_skill_inner{
         flex: 1;
@@ -326,3 +347,21 @@ desktop
         width: 70%;
     }
 }
+/* --------------------------------------------------------
+desktop
+---------------------------------------------------------*/
+$desktop-size: 980px;
+@media (min-width: $desktop-size){
+    /* ---------------------------
+    base
+    ----------------------------*/
+    .content{
+        width: $desktop-size;
+        margin: 0 auto;
+        padding: 50px 30px 30px 30px;
+        display: flex;
+        flex-flow: row nowrap;
+        overflow: auto;
+    }
+}
+
