@@ -129,12 +129,54 @@ sections career-history
     @include fontSize(15);
     font-style: italic;
 }
-.index-section_history_campany{
+.index-section_history_affiliation{
     @include fontSize(13);
     margin-bottom: 15px;
 }
 .index-section_history_desc{}
 
+/* ---------------------------
+sections edu-history
+----------------------------*/
+.index-section_edu-history{}
+.index-section_edu-history_title{
+    @extend .index-section_base_title;
+}
+/* ---------------------------
+sections skill
+----------------------------*/
+.index-section_skill{}
+.index-section_skill_title{
+    @extend .index-section_base_title;
+}
+.index-section_skill_outer{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.index-section_skill_inner{
+    margin-bottom:  10px;
+}
+.index-section_skill_subtitle{
+    @include fontSize(15);
+    margin-bottom: 15px;
+}
+.index-section_skill_list{
+    @include fontSize(13);
+    display: flex;
+    flex-flow: row wrap;
+}
+.index-section_skill_list-item{
+    width: 30%;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-style: italic;
+}
+.index-section_skill_list-star{
+    width: 70%;
+    box-sizing: border-box;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
 /* --------------------------------------------------------
 desktop
 ---------------------------------------------------------*/
@@ -256,9 +298,31 @@ desktop
         @include fontSize(15);
         font-style: italic;
     }
-    .index-section_history_campany{
+    .index-section_history_affiliation{
         @include fontSize(13);
         margin-bottom: 15px;
     }
     .index-section_history_desc{}
+    /* ---------------------------
+    sections skill
+    ----------------------------*/
+    .index-section_skill_outer{
+        flex-flow: row wrap;
+    }
+    .index-section_skill_inner{
+        flex: 1;
+        margin-bottom:  15px;
+    }
+    .index-section_skill_subtitle{
+        @include fontSize(18);
+    }
+    .index-section_skill_list{
+        @include fontSize(15);
+    }
+    .index-section_skill_list-item{
+        width: 30%;
+    }
+    .index-section_skill_list-star{
+        width: 70%;
+    }
 }
