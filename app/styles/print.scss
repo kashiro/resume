@@ -11,10 +11,19 @@ body,
     position: relative;
 }
 .index-section_career-history{
-    page-break-before: always;
-    page-break-inside: avoid;
+    //page-break-before: always;
+    //page-break-inside: avoid;
+    // page-* prop dose not working
+    // so to separate page added space
+    margin-top: 700px;
 }
 .index-section_skill{
-    page-break-before: always;
-    page-break-inside: avoid;
+    // page-break-before: always;
+    // page-break-inside: avoid;
+    // page-* prop dose not working
+    // so to separate page added space
+    margin-top: 200px;
+}
+.hide-print{
+    display: none;
 }
