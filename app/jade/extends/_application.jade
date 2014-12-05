@@ -14,14 +14,17 @@ html(lang='ja', prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/f
         // build:css({.tmp,app}) styles/main.css
         block css
         // endbuild
+        // build:css({.tmp,app}) styles/print.css
+        block cssprint
+        // endbuild
 
     body
         block body
 
-        // build:js(app) scripts/vendor.js
-        block vendorScripts
-        // endbuild
-        // build:js({app,.tmp}) scripts/main.js
-        block appScripts
-        // endbuild
+        //- // build:js(app) scripts/vendor.js
+        //- block vendorScripts
+        //- // endbuild
+        //- // build:js({app,.tmp}) scripts/main.js
+        //- block appScripts
+        //- // endbuild
 

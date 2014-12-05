@@ -8,15 +8,16 @@ include /mixin/_googleAnalytics
 extends /extends/_application.jade
 
 block title
-    title
+    title front-end engineer tomoyuki kashiro
 block viewport
     +viewport({ type: 'dw'})
 block meta
-    +basicInfo({})
-    +ogp({})
+    +basicInfo({desc: 'front-end engineer tomoyuki kashiro resume', keywords: 'front-end, engineer, resume'})
+    +ogp({locale: 'en_US', title: 'front-end engineer tomoyuki kashiro', type: 'profile', url: 'http://tomoyukikashiro.me/resume', siteName: 'front-end engineer tomoyuki kashiro', desc: 'front-end engineer tomoyuki kashiro resume'})
     +favicon({url: 'favicon.ico'})
 block css
     link(rel='stylesheet', href='styles/main.css', media="all")
+block cssprint
     link(rel='stylesheet', href='styles/print.css', media="print")
 
 
@@ -32,7 +33,7 @@ block body
             include /include/section/_skill
             include /include/section/_edu
 
-    +ga({id: '', domain: ''})
+    +ga({id: 'UA-50867411-1', domain: 'auto'})
 
-block appScripts
-    +scripts(scripts.app)
+//- block appScripts
+//-     +scripts(scripts.app)
