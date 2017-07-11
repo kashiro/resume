@@ -347,10 +347,6 @@ $tablet-size: 759px;
             margin: 0 0 15px 0;
         }
     }
-    .index-section_skill_inner--large{
-        flex: 1.5;
-        margin: 0 0 15px 20px;
-    }
     .index-section_skill_subtitle{
         @include fontSize(18);
     }

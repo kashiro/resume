@@ -1,11 +1,9 @@
-include /mixin/_scripts
-include /mixin/_favicon
-include /mixin/meta/_ogp
-include /mixin/meta/_viewport
-include /mixin/meta/_basicInfo
-include /mixin/_googleAnalytics
-//- include /mixin/_dnsPrefetch
 extends /extends/_application.jade
+include /mixin/_favicon.jade
+include /mixin/meta/_ogp.jade
+include /mixin/meta/_viewport.jade
+include /mixin/meta/_basicInfo.jade
+include /mixin/_googleAnalytics.jade
 
 block title
     title front-end engineer tomoyuki kashiro
@@ -19,21 +17,15 @@ block css
     link(rel='stylesheet', href='styles/main.css', media="all")
 block cssprint
     link(rel='stylesheet', href='styles/print.css', media="print")
-
-
 block body
-
     .content
-        include /include/_header
-        include /include/_nav
+        include /include/_header.jade
+        include /include/_nav.jade
         main.index-section
-            include /include/section/_basic-info
-            include /include/section/_summary
-            include /include/section/_career-history
-            include /include/section/_skill
-            include /include/section/_edu
+            include /include/section/_basic-info.jade
+            include /include/section/_summary.jade
+            include /include/section/_career-history.jade
+            include /include/section/_skill.jade
+            include /include/section/_edu.jade
 
     +ga({id: 'UA-50867411-1', domain: 'auto'})
-
-//- block appScripts
-//-     +scripts(scripts.app)
