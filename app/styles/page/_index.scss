@@ -1,6 +1,3 @@
-/* ---------------------------
-base
-----------------------------*/
 .content{
     width: 100%;
     height: 100%;
@@ -11,29 +8,13 @@ base
     position: relative;
     overflow-x: hidden;
 }
-$content-padding-left: 10px;
-/* ---------------------------
-header
-----------------------------*/
+
 .index-header{
     @include fontSize(13);
     position: absolute;
     top: 18px;
     left: 10px;
 }
-
-/* ---------------------------
-nav
-----------------------------*/
-.index-nav{
-    width: 100px;
-    height: 100%;
-    position: absolute;
-    transform: translate(0, 0);
-}
-/* ---------------------------
-sections
-----------------------------*/
 .index-section{
     width: 100%;
     min-height: 100%;
@@ -46,193 +27,18 @@ sections
     @include fontSize(18);
     margin-bottom: 10px;
 }
-@each $cls in basic-info, summary, career-history, skill, edu{
-    .index-section_#{$cls}{
-        @extend .index-section_base;
-    }
-}
-
-/* ---------------------------
-sections basic-info
-----------------------------*/
-.index-section_basic-info{}
-.index-section_basic-info_text{
-    width: 100%;
-    height: 100%;
-}
-.index-section_basic-info_text_name{
-    @include fontSize(30);
-}
-.index-section_basic-info_text_position{
-    @include fontSize(14);
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-.index-section_basic-info_text_more{
-    @include fontSize(13);
-    padding-left: $content-padding-left;
-}
-.index-section_basic-info_text_info,
-.index-section_basic-info_text_link{
-    display: flex;
-    flex-flow: row wrap;
-    line-height: 2.2rem;
-}
-
-.index-section_basic-info_text_more_name{
-    box-sizing: border-box;
-    width: 30%;
-}
-.index-section_basic-info_text_more_value{
-    width: 70%;
-    margin-bottom: 0;
-    box-sizing: border-box;
-    padding-left: 15px;
-    a{
-        display: inline-block;
-    }
-}
-
-.index-section_basic-info_img{
-    display: none;
-}
-
-/* ---------------------------
-sections summary
-----------------------------*/
-.index-section_summary{}
-.index-section_summary_title{
-    @extend .index-section_base_title;
-}
-.index-section_summary_desc{
-    padding-left: $content-padding-left;
-}
-
-/* ---------------------------
-sections career-history
-----------------------------*/
-.index-section_career-history{
-}
-.index-section_career-history_title{
-    @extend .index-section_base_title;
-}
-.index-section_history_year{
-    display: flex;
-}
-.index-section_history_year_num-line{
-    display: none;
-}
-.index-section_history_position-outer{
-    display: flex;
-    flex-flow: column nowrap;
-    flex: 1;
-}
-.index-section_history_position{
-    padding-left: $content-padding-left;
-}
-.index-section_history_date{
-    @include fontSize(13);
-    text-align: right;
-}
-.index-section_history_position-name{
-    @include fontSize(15);
-    font-style: italic;
-}
-.index-section_history_affiliation{
-    @include fontSize(13);
-    margin-bottom: 15px;
-}
-.index-section_history_desc{}
-.index-section_history_desc_item{
-    list-style: disc;
-    margin: 0 0 15px 20px;
-}
-
-/* ---------------------------
-sections edu-history
-----------------------------*/
-.index-section_edu-history{}
-.index-section_edu-history_title{
-    @extend .index-section_base_title;
-}
-/* ---------------------------
-sections skill
-----------------------------*/
-.index-section_skill{
-}
-.index-section_skill_title{
-    @extend .index-section_base_title;
-}
-.index-section_skill_outer{
-    display: flex;
-    flex-flow: column nowrap;
-    padding-left: $content-padding-left;
-}
-.index-section_skill_inner{
-    margin-bottom:  10px;
-}
-.index-section_skill_subtitle{
-    @include fontSize(15);
-    margin-bottom: 15px;
-}
-.index-section_skill_list{
-    @include fontSize(13);
-    display: flex;
-    flex-flow: row wrap;
-}
-.index-section_skill_list-item{
-    width: 50%;
-    box-sizing: border-box;
-    padding-left: 20px;
-    font-style: italic;
-}
-.index-section_skill_list-star{
-    width: 50%;
-    box-sizing: border-box;
-    padding-left: 20px;
-    margin-bottom: 8px;
-}
-.index-section_skill_list-star--large{
-    @extend .index-section_skill_list-star;
-    line-height: 2rem;
-    margin-bottom: 15px;
-}
-/* --------------------------------------------------------
-tablet
----------------------------------------------------------*/
-$tablet-size: 759px;
 @media (min-width: $tablet-size){
-    $content-padding-left: 20px;
-
-    /* ---------------------------
-    base
-    ----------------------------*/
     .content{
         width: 100%;
-        //margin: 0 auto;
         padding: 50px 30px 30px 30px;
         display: flex;
         flex-flow: row nowrap;
         overflow: auto;
     }
-
-    /* ---------------------------
-    header
-    ----------------------------*/
     .index-header{
         @include fontSize(18);
         top: 18px;
     }
-    /* ---------------------------
-    nav
-    ----------------------------*/
-    .index-nav{
-        display: none;
-    }
-    /* ---------------------------
-    sections
-    ----------------------------*/
     .index-section{
         width: auto;
         flex: 1;
@@ -246,122 +52,8 @@ $tablet-size: 759px;
         @include fontSize(27);
         margin-bottom: 15px;
     }
-    /* ---------------------------
-    sections summary
-    ----------------------------*/
-    .index-section_summary_desc{
-        padding-left: $content-padding-left;
-    }
-    /* ---------------------------
-    sections basic-info
-    ----------------------------*/
-    .index-section_basic-info{
-        display: flex;
-    }
-    .index-section_basic-info_text{
-        width: 70%;
-    }
-    .index-section_basic-info_text_name{
-        @include fontSize(41);
-    }
-    .index-section_basic-info_text_position{
-        @include fontSize(14);
-        margin-bottom: 30px;
-    }
-
-    .index-section_basic-info_text_more{
-        @include fontSize(16);
-    }
-    .index-section_basic-info_text_more_name{
-        padding-left: 20px;
-    }
-    .index-section_basic-info_text_more_value{
-        margin-bottom: 15px;
-    }
-
-    .index-section_basic-info_img{
-        display: block;
-        width: 30%;
-        height: 100%;
-        text-align: center;
-        box-sizing: border-box;
-        padding-top: 25px;
-    }
-    /* ---------------------------
-    sections career-history
-    ----------------------------*/
-    .index-section_career-history{}
-    .index-section_history_year{
-        margin-bottom: 20px;
-    }
-    .index-section_history_year_num-line{
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 100px;
-    }
-    .index-section_history_year_num{
-        @include fontSize(14);
-        font-weight: normal;
-        text-align: center;
-    }
-    .index-section_history_year_line{
-        width: 1px;
-        height: 100%;
-        display: inline-block;
-        background-color: #ccc;
-        flex: 1;
-    }
-    .index-section_history_position-outer{
-        box-sizing: border-box;
-        padding-top: 20px;
-    }
-    .index-section_history_position{
-        padding-left: 0;
-        margin-bottom: 0;
-    }
-    .index-section_history_date{
-        @include fontSize(13);
-        text-align: right;
-    }
-    .index-section_history_position-name{
-        @include fontSize(15);
-        font-style: italic;
-    }
-    .index-section_history_affiliation{
-        @include fontSize(13);
-        margin-bottom: 15px;
-    }
-    .index-section_history_desc{}
-    /* ---------------------------
-    sections skill
-    ----------------------------*/
-    .index-section_skill_outer{
-        flex-flow: row wrap;
-        padding-left: $content-padding-left;
-    }
-    .index-section_skill_inner{
-        flex: 1;
-        margin: 0 0 15px 20px;
-        &:nth-child(1){
-            margin: 0 0 15px 0;
-        }
-    }
-    .index-section_skill_subtitle{
-        @include fontSize(18);
-    }
-    .index-section_skill_list{
-        @include fontSize(15);
-    }
 }
-/* --------------------------------------------------------
-desktop
----------------------------------------------------------*/
-$desktop-size: 980px;
 @media (min-width: $desktop-size){
-    /* ---------------------------
-    base
-    ----------------------------*/
     .content{
         width: $desktop-size;
         margin: 0 auto;

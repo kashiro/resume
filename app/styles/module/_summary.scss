@@ -1,0 +1,11 @@
+.summary{
+    &__desc{
+        padding-left: $content-padding-left;
+    }
+
+    @media (min-width: $tablet-size){
+        &__desc{
+            padding-left: $content-padding-left-md;
+        }
+    }
+}
