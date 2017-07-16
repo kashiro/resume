@@ -13,14 +13,9 @@ block meta
     +basicInfo({desc: 'front-end engineer tomoyuki kashiro resume', keywords: 'front-end, engineer, resume'})
     +ogp({locale: 'en_US', title: 'front-end engineer tomoyuki kashiro', type: 'profile', url: 'http://tomoyukikashiro.me/resume', siteName: 'front-end engineer tomoyuki kashiro', desc: 'front-end engineer tomoyuki kashiro resume'})
     +favicon({url: 'favicon.ico'})
-block css
-    link(rel='stylesheet', href='styles/main.css', media="all")
-block cssprint
-    link(rel='stylesheet', href='styles/print.css', media="print")
 block body
     .content
         include /include/_header.jade
-        include /include/_nav.jade
         main.index-section
             include /include/section/_basic-info.jade
             include /include/section/_summary.jade

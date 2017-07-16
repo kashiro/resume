@@ -1,0 +1,50 @@
+.skill{
+    &__outer{
+        display: flex;
+        flex-flow: column nowrap;
+        padding-left: $content-padding-left;
+    }
+    &__inner{
+        margin-bottom:  10px;
+    }
+    &__subtitle{
+        @include fontSize(15);
+        margin-bottom: 15px;
+    }
+    &__list{
+        @include fontSize(13);
+        display: flex;
+        flex-flow: row wrap;
+    }
+    &__list-item{
+        width: 50%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        font-style: italic;
+    }
+    &__list-star{
+        width: 50%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+    @media (min-width: $tablet-size) {
+        &__outer{
+            flex-flow: row wrap;
+            padding-left: $content-padding-left;
+        }
+        &__inner{
+            flex: 1;
+            margin: 0 0 15px 20px;
+            &:nth-child(1){
+                margin: 0 0 15px 0;
+            }
+        }
+        &__subtitle{
+            @include fontSize(18);
+        }
+        &__list{
+            @include fontSize(15);
+        }
+    }
+}

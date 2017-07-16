@@ -1,0 +1,76 @@
+.career-history {
+    &__year{
+        display: flex;
+    }
+    &__year_num-line{
+        display: none;
+    }
+    &__position-outer{
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 1;
+    }
+    &__position{
+        padding-left: $content-padding-left;
+    }
+    &__date{
+       @include fontSize(13);
+        text-align: right;
+    }
+    &__position-name{
+        @include fontSize(15);
+        font-style: italic;
+    }
+    &__affiliation{
+        @include fontSize(13);
+        margin-bottom: 15px;
+    }
+    &__desc_item{
+        list-style: disc;
+        margin: 0 0 15px 20px;
+    }
+
+    @media (min-width: $tablet-size) {
+        &__year{
+            margin-bottom: 20px;
+        }
+        &__year_num-line{
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            width: 100px;
+        }
+        &__year_num{
+            @include fontSize(14);
+            font-weight: normal;
+            text-align: center;
+        }
+        &__year_line{
+            width: 1px;
+            height: 100%;
+            display: inline-block;
+            background-color: #ccc;
+            flex: 1;
+        }
+        &__position-outer{
+            box-sizing: border-box;
+            padding-top: 20px;
+        }
+        &__position{
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        &__date{
+            @include fontSize(13);
+            text-align: right;
+        }
+        &__position-name{
+            @include fontSize(15);
+            font-style: italic;
+        }
+        &__affiliation{
+            @include fontSize(13);
+            margin-bottom: 15px;
+        }
+    }
+}
