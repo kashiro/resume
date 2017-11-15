@@ -21,7 +21,7 @@ module.exports = Merge(CommonConfig, {
   ],
   devServer: {
     hot: true,
-    contentBase: './dist'
+    contentBase: './docs'
   },
   devtool: 'cheap-module-eval-source-map'
 });
