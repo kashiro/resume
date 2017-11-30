@@ -16,6 +16,18 @@ module.exports = {
         use: [
           'pug-loader'
         ]
+      },
+      {
+        test: /\.(png|jpg|gif|pdf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              context: 'app',
+              name: '[path][name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
